@@ -5,26 +5,27 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes">
   <meta name="mobile-web-app-capable" content="yes">
   <link rel="manifest" href="manifest.json">
-
   <title>The GastroClub</title>
   <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-  <h1>The GastroClub</h1>
-  <p>Try asking thing like: "What time is it?" or "Tell me the news".</p>
-  <button id="login">Login</button>
-  <button id="logout" disabled>Logout</button>
-  <button id="startRecording" disabled>Start recording</button>
-  <button id="stopRecording" disabled>Stop recording</button>
-  <button id="stopAudio" disabled>Stop audio</button>
-  <button id="pauseAudio" disabled>Pause audio</button>
-  <button id="playAudio" disabled>Play/Resume audio</button>
-  <button id="replayAudio" disabled>Replay audio</button>
+<img class="header" id="login" src="img/header-logo.png">
+<button id="login">Login</button>
+<button id="logout" disabled>Logout</button>
+<button id="startRecording" disabled>Start recording</button>
+<button id="stopRecording" disabled>Stop recording</button>
+<button id="stopAudio" disabled>Stop audio</button>
+<button id="pauseAudio" disabled>Pause audio</button>
+<button id="playAudio" disabled>Play/Resume audio</button>
+<button id="replayAudio" disabled>Replay audio</button>
 
-  <ul id="log"></ul>
-  <ul id="audioLog"></ul>
-
-  <script src="./index.bundle.js"></script>
+<ul id="log"></ul>
+<ul id="audioLog"></ul>
+<div class="button-holder">
+  <img class="button-status" src="img/status-inactive.png">
+  <img class="button" src="img/button.png">
+</div>
+<script src="./index.bundle.js"></script>
 </body>
 </html>
 

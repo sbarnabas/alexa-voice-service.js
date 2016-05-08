@@ -321,7 +321,7 @@ function checkForLocation() {
   xhr.open('GET', 'https://thegastro.club/lastevent', true);
   xhr.responseType = 'json';
   xhr.onload = (event) => {
-    if (xhr.status = 200) {
+    if (xhr.status == 200) {
       let resp = xhr.response;
       console.log(resp);
     }

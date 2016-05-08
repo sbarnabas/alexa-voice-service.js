@@ -3,7 +3,7 @@
 const fs = require('fs');
 const request = require('request');
 const http = require('http');
-
+const mongodb = require('mongodb');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -42,19 +42,22 @@ app.post('/audio', upload.single('data'), (req, res) => {
 });
 
 app.get('/lastevent', (req, res)=> {
-  
+
   let MONGO_URL = 'mongodb://hiddengems:test123@aws-us-east-1-portal.17.dblayer.com:10014/hiddengems?ssl=true';
   let user_id = '1234';
   let field = "google_place_info";
   mongodb.MongoClient.connect(MONGO_URL, {ssl: true, sslValidate: false}, function (err, db) {
-    let user_info = db.collections("Users").findOne({"user_id": user_id, "google_place_info": {"$exists": true}});
-    if (user_info) {
-      db.collections("Users")
-        .update({"user_id": user_id, "google_place_info": {"$exists": true}}, {"$unset": {"google_place_info": ""}});
-      res.json({data: user_info.google_place_info});
-    } else {
-      res.json({data: null})
-    }
+   db.collection("Users").findOne({"user_id": user_id, "google_place_info": {"$exists": true}}, function (err,user_info) {
+     if (user_info) {
+       
+       db.collection("Users")
+         .update({"user_id": user_id, "google_place_info": {"$exists": true}}, {"$unset": {"google_place_info": ""}});
+       res.json({data: user_info.google_place_info});
+     } else {
+       res.json({data: null})
+     }
+    });
+
   });
 
 });

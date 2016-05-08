@@ -11,3 +11,34 @@
   overflow: auto;
   border: 1px solid #F7F7F7;
 }
+
+body {
+  background-image: url(img/background.png);
+  font-family: "Avenir Next";
+  color:white;
+  background-size:cover;
+
+}
+
+.header {
+  display:block;
+}
+
+.button {
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+
+}
+.button-status{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:96px;
+}
+
+.button-holder{
+  position:absolute;
+  bottom: 100px;
+  width:100%;
+}
