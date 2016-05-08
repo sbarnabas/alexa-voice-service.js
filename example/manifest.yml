@@ -1,0 +1,4 @@
+ applications:
+ - name: thegastroclub
+   memory: 2G
+   command: node server.js
